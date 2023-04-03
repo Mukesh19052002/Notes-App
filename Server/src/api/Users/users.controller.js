@@ -1,5 +1,5 @@
 import { signedToken } from "../../services/JWT.js";
-import usersModel from "./users.modal.js";
+import usersModel from "./users.model.js";
 
 export const login = async (req, res) => {
   const { email, password } = req.body;
@@ -18,7 +18,7 @@ export const login = async (req, res) => {
     });
   } else {
     if (password === isUserAlreadyExists.password) {
-      const accessToken = signedToken({ email });
+      const accessToken = signedToken({ id: isUserAlreadyExists._id });
       return res.send({
         status: "success",
         message: "User logged in successfully",
