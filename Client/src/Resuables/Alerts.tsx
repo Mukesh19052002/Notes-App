@@ -7,7 +7,7 @@ const Alerts = ({ type, message }: IAlert) => {
       style={{
         position: "absolute",
         width: "300px",
-        top: "70px",
+        top: "75px",
         right: "10px",
       }}
     >

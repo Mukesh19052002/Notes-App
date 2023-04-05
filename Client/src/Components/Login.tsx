@@ -34,7 +34,7 @@ export function Login(props: ITabPanelProps) {
       return setIsPasswordError(true);
     }
 
-    const { status, message } = await httpRequest(
+    const { status, message, data } = await httpRequest(
       "/login",
       "POST",
       formDetails
@@ -51,7 +51,8 @@ export function Login(props: ITabPanelProps) {
       setTimeout(() => {
         closeAlert();
         setFormDetails(initialData);
-        navigate("/home");
+        localStorage.setItem("accessToken", data.accessToken);
+        navigate("/noteit");
       }, 1000);
     } else {
       setAlert((prev: any) => {
@@ -80,6 +81,7 @@ export function Login(props: ITabPanelProps) {
           <div className="d-flex flex-column gap-3 mt-4">
             <TextField
               label="Email"
+              sx={{ fontFamily: "cursive!important" }}
               error={isEmailError}
               helperText={isEmailError ? "Incorrect entry." : ""}
               value={formDetails.email}

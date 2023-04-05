@@ -42,6 +42,9 @@ const Auth = () => {
   };
   return (
     <div>
+      {alert.alertShow ? (
+        <Alerts type={alert.alertType} message={alert.alertMessage} />
+      ) : null}
       {spinner ? (
         <Spinner />
       ) : (
@@ -58,11 +61,7 @@ const Auth = () => {
               />
             </div>
           </div>
-          {alert.alertShow ? (
-            <Alerts type={alert.alertType} message={alert.alertMessage} />
-          ) : (
-            ""
-          )}
+
           <div
             className="d-flex justify-content-center w-100  align-items-center"
             style={{ height: "492px" }}
@@ -98,6 +97,7 @@ const Auth = () => {
                   index={0}
                   setAlert={setAlert}
                   closeAlert={closeAlert}
+                  setValue={setValue}
                 />
                 <SignUp
                   value={value}

@@ -12,17 +12,10 @@ const FirstPage = () => {
         </div>
         <div className="d-flex justify-content-between align-items-center">
           <Button
-            label={"Login"}
+            label={"Login / SignUp"}
             btnClass={"btn btn-dark px-3 h-75 me-3 align-items-center d-flex"}
             btnAction={() => {
               navigate("/login");
-            }}
-          />
-          <Button
-            label={"Sign Up"}
-            btnClass={"btn btn-dark px-3 h-75 align-items-center d-flex"}
-            btnAction={() => {
-              navigate("/signup");
             }}
           />
         </div>
