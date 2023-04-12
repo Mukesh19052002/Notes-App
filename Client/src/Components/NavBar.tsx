@@ -4,7 +4,7 @@ import Face6Icon from "@mui/icons-material/Face6";
 
 const NavBar = () => {
   return (
-    <div style={{ backgroundColor: "#3aafa9", width: "100%" }}>
+    <div style={{ backgroundColor: "#6096B4", width: "100%" }}>
       <div className="d-flex w-100 py-2 px-4 justify-content-between">
         <div>
           <Logo />

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import Spinner from "../Resuables/Spinner";
-import Logo from "../assets/svg/Logo";
-import Button from "../Resuables/Button";
 import Alerts from "../Resuables/Alerts";
 import NavBar from "../Components/NavBar";
 import SideBar from "../Components/SideBar";
+import { Route, Routes } from "react-router-dom";
+import Notes from "../Components/Notes";
 
 const Home = () => {
   const initialAlert = {
@@ -41,10 +41,18 @@ const Home = () => {
             </div>
           </div>
           <div className="row m-0" style={{ height: "89.2vh" }}>
-            <div className="col col-2 p-0" style={{ height: "100%" }}>
+            <div
+              className="col col-2 p-0"
+              style={{ height: "100%", width: "15%" }}
+            >
               <SideBar />
             </div>
-            <div className="col p-0 w-75">One of three columns</div>
+            <div className="col p-0 w-75">
+              <Routes>
+                <Route path="notes" element={<Notes />} />
+                <Route path="notebook" element={<Notes />} />
+              </Routes>
+            </div>
           </div>
         </>
       )}

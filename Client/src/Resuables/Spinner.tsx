@@ -2,7 +2,7 @@ const Spinner = () => {
   const style = {
     height: "100vh",
     opacity: "0.8",
-    backgroundColor: "#3aafa9",
+    backgroundColor: "#6096B4",
   };
   return (
     <div

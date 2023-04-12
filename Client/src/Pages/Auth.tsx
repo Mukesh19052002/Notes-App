@@ -48,7 +48,7 @@ const Auth = () => {
       {spinner ? (
         <Spinner />
       ) : (
-        <div style={{ backgroundColor: "#3aafa9" }}>
+        <div style={{ backgroundColor: "#6096B4" }}>
           <div className="d-flex w-100 py-3 px-4 justify-content-between">
             <div>
               <Logo />

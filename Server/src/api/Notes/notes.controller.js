@@ -12,17 +12,24 @@ export const getAllNotes = async (req, res) => {
       .sort({ title: sort })
       .limit(limit)
       .skip(skipValue);
-    res.send(result);
+    res.send({
+      status: "success",
+      message: "All Notes obtained successfully",
+      data: result,
+    });
   } else {
     const result = await notesModel.find();
-    res.send(result);
+    res.send({
+      status: "success",
+      message: "All Notes obtained successfully",
+      data: result,
+    });
   }
 };
 
 export const createNotes = async (req, res) => {
   const { title, content, accessToken } = req.body;
-
-  if (!title || !content || !accessToken) {
+  if (!accessToken) {
     return res.send({
       status: "failed",
       message: "Please enter something in the notes",

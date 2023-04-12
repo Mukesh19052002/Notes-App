@@ -17,3 +17,23 @@ export interface IAlert {
   type: string;
   message: string;
 }
+
+export interface ITitleInput {
+  title: string;
+  setTitle: any;
+  setStatus: any;
+}
+export interface ITextArea {
+  content: string;
+  setContent: any;
+  setStatus: any;
+}
+
+export interface IToolBar {
+  status: boolean;
+  handleSave: any;
+}
+export interface ICard {
+  key: number;
+  data: any;
+}
