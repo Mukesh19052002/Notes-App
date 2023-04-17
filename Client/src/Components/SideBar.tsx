@@ -2,6 +2,7 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AutoStoriesRoundedIcon from "@mui/icons-material/AutoStoriesRounded";
 import FormatListBulletedRoundedIcon from "@mui/icons-material/FormatListBulletedRounded";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import SettingsIcon from "@mui/icons-material/Settings";
 import "../assets/css/common.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -23,7 +24,7 @@ const SideBar = () => {
           <HomeRoundedIcon sx={iconSize} />
           <p>Home</p>
         </li>
-        <li>
+        <li onClick={() => navigate("notebook")}>
           <AutoStoriesRoundedIcon sx={iconSize} />
           <p>NoteBooks</p>
         </li>
@@ -36,6 +37,10 @@ const SideBar = () => {
           <p>Share</p>
         </li>
       </ul>
+      <div className="d-flex gap-2">
+        <SettingsIcon sx={iconSize} />
+        <p>Settings</p>
+      </div>
     </div>
   );
 };

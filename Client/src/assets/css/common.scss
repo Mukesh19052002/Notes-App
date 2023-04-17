@@ -15,7 +15,29 @@ ul {
     }
   }
 }
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-menu {
+  padding: 0;
+  .dropdown-li {
+    padding: 10px;
 
+    .dropdown-item {
+      padding: 0;
+    }
+    .logout {
+      color: red;
+    }
+    .dropdown-item:hover {
+      background-color: rgb(210, 210, 210);
+    }
+  }
+  .dropdown-li:hover {
+    border-radius: 5px;
+    background-color: rgb(210, 210, 210);
+  }
+}
 .title-input {
   background-color: #bdcdd6;
   font-size: 25px;
@@ -40,26 +62,43 @@ ul {
 
 .card {
   width: 23.5%;
+  box-shadow: 2px 2px 5px grey;
   .card-content {
     background-color: #eee9da;
     height: 10em;
     padding: 10px;
     margin: 0;
     font-size: 14px;
+    // white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .card-container {
     display: flex;
     padding: 10px;
     justify-content: space-between;
     align-items: baseline;
+    background-color: rgb(210, 210, 210);
     .card-title {
       font-weight: 600;
       margin: 0;
       font-size: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 120px;
     }
     .card-time {
       font-size: 8px;
       margin: 0;
     }
   }
+}
+
+.search-bar {
+  border-radius: 10px;
+  border: none;
+  padding: 10px 15px;
+  height: 40px;
+  background-color: rgb(210, 210, 210);
 }

@@ -7,7 +7,6 @@ export const signedToken = (payload) => {
 };
 
 export const isVerified = (payload) => {
-  console.log(payload);
   const verification = token.verify(payload, process.env.JWT_KEY);
   return verification;
 };

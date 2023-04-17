@@ -1,17 +1,14 @@
-import SaveAsRoundedIcon from "@mui/icons-material/SaveAsRounded";
-import BeenhereRoundedIcon from "@mui/icons-material/BeenhereRounded";
+import SaveIcon from "@mui/icons-material/Save";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { IToolBar } from "../Constant/Interfaces";
 
-const ToolBar = ({ status, handleSave }: IToolBar) => {
+const ToolBar = ({ handleSave, handleBack }: IToolBar) => {
   return (
     <div>
       <div></div>
       <div>
-        {status ? (
-          <BeenhereRoundedIcon />
-        ) : (
-          <SaveAsRoundedIcon onClick={handleSave} />
-        )}
+        <SaveIcon onClick={handleSave} />
+        <ArrowBackIcon onClick={handleBack} />
       </div>
     </div>
   );

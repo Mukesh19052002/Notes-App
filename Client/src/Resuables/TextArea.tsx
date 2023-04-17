@@ -1,7 +1,7 @@
 import { ITextArea } from "../Constant/Interfaces";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 
-export const TextArea = ({ content, setContent, setStatus }: ITextArea) => {
+export const TextArea = ({ content, setContent }: ITextArea) => {
   return (
     <div>
       <textarea
@@ -12,7 +12,6 @@ export const TextArea = ({ content, setContent, setStatus }: ITextArea) => {
           setContent((prev: any) => {
             return { ...prev, content: e.target.value };
           });
-          setStatus(false);
         }}
       />
     </div>

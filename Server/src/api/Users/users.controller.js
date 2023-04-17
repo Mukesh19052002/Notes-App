@@ -1,4 +1,4 @@
-import { signedToken } from "../../services/JWT.js";
+import { isVerified, signedToken } from "../../services/JWT.js";
 import usersModel from "./users.model.js";
 
 export const login = async (req, res) => {
@@ -65,5 +65,32 @@ export const signup = async (req, res) => {
     }
   } catch (err) {
     console.log("error");
+  }
+};
+
+export const userById = async (req, res) => {
+  const bearerToken = req.headers.authorization.split(" ");
+  if (!bearerToken[1]) {
+    return res.send({
+      status: "failed",
+      message: "Please Login or Signup",
+    });
+  }
+  const verifyUser = isVerified(bearerToken[1]);
+  if (!verifyUser) {
+    return res.send({
+      status: "failed",
+      message: "Invalid Token",
+    });
+  }
+  try {
+    const result = await usersModel.find({ _id: verifyUser.id });
+    return res.send({
+      status: "success",
+      message: "All Notes obtained successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log(error);
   }
 };

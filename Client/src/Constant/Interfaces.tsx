@@ -21,19 +21,30 @@ export interface IAlert {
 export interface ITitleInput {
   title: string;
   setTitle: any;
-  setStatus: any;
 }
 export interface ITextArea {
   content: string;
   setContent: any;
-  setStatus: any;
 }
 
 export interface IToolBar {
-  status: boolean;
   handleSave: any;
+  handleBack: any;
 }
 export interface ICard {
-  key: number;
   data: any;
+  handleNavigate: any;
+}
+
+export interface ICRUDNotes {
+  notesId: string;
+  newNotes: {
+    title: string;
+    content: string;
+  };
+  setNotesId: any;
+  setNewNotes: any;
+  handleNotes: any;
+  setNotesModal: any;
+  initialNotes: any;
 }
